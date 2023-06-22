@@ -1,0 +1,75 @@
+.container {
+  margin-top: 50px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.crud-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.crud-form {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: bold;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.form-actions {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  color: #fff;
+  border: none;
+}
+
+.crud-table {
+  flex: 1;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+
+th {
+  background-color: #f0f0f0;
+}

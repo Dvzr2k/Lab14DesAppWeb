@@ -35,7 +35,7 @@ export class OrderDetailsService {
     {
       id:4,
       foodName:"Avengers",
-      foodDetails:"EndGame",
+      foodDetails:"End Game",
       foodPrice:100,
       foodImg:"/assets/img/img4.jpg"
     },

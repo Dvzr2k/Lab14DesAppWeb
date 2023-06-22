@@ -5,13 +5,15 @@ import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { HomeComponent } from './pages/home/home.component';
 import { PrincipalpageComponent } from './pages/principalpage/principalpage.component';
+import { SociosComponent } from './pages/socios/socios.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
   {path:'menu',component:PrincipalComponent},
   {path:'menu/:id',component:PrincipalpageComponent},
   {path:'about',component:AboutComponent},
-  {path:'contact',component:ContactComponent}
+  {path:'contact',component:ContactComponent},
+  {path:'socios',component:SociosComponent}
 ];
 
 @NgModule({

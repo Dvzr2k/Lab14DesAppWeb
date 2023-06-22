@@ -11,6 +11,8 @@ import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { Principal1Component } from './pages/principal1/principal1.component';
 import { PrincipalpageComponent } from './pages/principalpage/principalpage.component';
+import { SociosComponent } from './pages/socios/socios.component';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { PrincipalpageComponent } from './pages/principalpage/principalpage.comp
     AboutComponent,
     ContactComponent,
     Principal1Component,
-    PrincipalpageComponent
+    PrincipalpageComponent,
+    SociosComponent
   ],
   imports: [
     BrowserModule,
