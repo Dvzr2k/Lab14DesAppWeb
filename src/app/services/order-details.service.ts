@@ -11,32 +11,33 @@ export class OrderDetailsService {
   
   foodDetails = [
     {
-      id:1,
-      foodName:"Comida1",
-      foodDetails:"La comida1",
-      foodPrice:100,
-      foodImg:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/wzfq7djolqxgdhghebbq"
+      id: 1,
+      foodName: "Iron Man 3",
+      foodDetails: "Iron Man",
+      foodPrice: 20,
+      foodImg: "/assets/img/img1.jpg"
     },
+    
     {
       id:2,
-      foodName:"Comida2",
-      foodDetails:"La comida2",
-      foodPrice:100,
-      foodImg:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/sgbobtbxlojbtdnr2m5k"
+      foodName:"Batman",
+      foodDetails:"Batman",
+      foodPrice:32,
+      foodImg:"/assets/img/img2.jpg"
     },
     {
       id:3,
-      foodName:"Comida3",
-      foodDetails:"La comida3",
-      foodPrice:100,
-      foodImg:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/xbeqlsck3p0kei53to7k"
+      foodName:"Turbo",
+      foodDetails:"Turbo",
+      foodPrice:14,
+      foodImg:"/assets/img/img3.jpg"
     },
     {
       id:4,
-      foodName:"Comida4",
-      foodDetails:"La comida4",
+      foodName:"Avengers",
+      foodDetails:"EndGame",
       foodPrice:100,
-      foodImg:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/l2ng6gtge30sqaafqng7"
+      foodImg:"/assets/img/img4.jpg"
     },
     {
       id:5,
