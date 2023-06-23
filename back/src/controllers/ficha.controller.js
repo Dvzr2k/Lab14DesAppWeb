@@ -2,7 +2,7 @@ import { FichaPrestamo } from "../models/FichaPrestamo.js"
 import { devolverCinta, prestarCinta } from "./cinta.controller.js";
 
 
-export const obtenerFichas = async (req, res) => {
+export const obtenerFichasPrestamo = async (req, res) => {
     try {
         const fichasPrestamos = await FichaPrestamo.find();
         return res.json(fichasPrestamos)
@@ -23,7 +23,7 @@ export const guardarFichaPrestamo = async (req, res) => {
     }
 }
 
-export const devolverFicha = async (req, res) => {
+export const devolverFichaPrestamo = async (req, res) => {
     try {
         const {_id} = req.body;
         const ficha = await FichaPrestamo.findByIdAndUpdate(_id, {entregado: true});
@@ -31,6 +31,14 @@ export const devolverFicha = async (req, res) => {
         const cintaId = ficha.cinta;
         await devolverCinta(cintaId)
         return res.json({msg: "Ficha entregada"})
+    } catch (error) {
+        
+    }
+}
+
+export const devolverFichaEspera = async (req, res) => {
+    try {
+        
     } catch (error) {
         
     }

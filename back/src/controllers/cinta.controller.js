@@ -9,6 +9,17 @@ export const obtenerCintas = async (req, res) => {
     }
 }
 
+export const obtenerCantidadCintas = async (req, res) => {
+    const cintas = await Cinta.find();
+    let cintasDisponibles = []
+    cintas.forEach(cinta => {
+        if(!cinta.prestada) cintasDisponibles.push(cinta)
+    });
+    const nroDisponibles = cintasDisponibles.length()
+    const nroPrestadas = cintas.length() - nroDisponibles
+    return res.send({nroDisponibles, nroPrestadas})
+}
+
 export const guardarCinta = async (req, res) => {
     try {
         const cinta = new Cinta(req.body)

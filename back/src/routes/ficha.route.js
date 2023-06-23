@@ -1,9 +1,9 @@
 import { Router } from "express";
 const router = Router();
-import {devolverFicha, guardarFichaPrestamo, obtenerFichas} from "../controllers/ficha.controller.js"
+import {devolverFichaPrestamo, guardarFichaPrestamo, obtenerFichasPrestamo} from "../controllers/ficha.controller.js"
 
-router.get('/', obtenerFichas);
+router.get('/', obtenerFichasPrestamo);
 router.post('/', guardarFichaPrestamo);
-router.put('/', devolverFicha);
+router.put('/', devolverFichaPrestamo);
 
 export default router;

@@ -4,6 +4,7 @@
 
 - http://localhost:5000/api/cinta/ GET (obtiene todas las cintas)
 - http://localhost:5000/api/cinta/ POST (guarda una cinta)
+- http://localhost:5000/api/cinta/cantidades GET (obtener cantidades de las cintas, cantidad disponibles de cintas y cantidad de )
 
 ### Estructura
 
