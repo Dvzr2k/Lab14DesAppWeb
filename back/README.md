@@ -2,8 +2,8 @@
 
 ## Cintas
 
-http://localhost:5000/api/cinta/ GET (obtiene todas las cintas)
-http://localhost:5000/api/cinta/ POST (guarda una cinta)
+- http://localhost:5000/api/cinta/ GET (obtiene todas las cintas)
+- http://localhost:5000/api/cinta/ POST (guarda una cinta)
 
 ### Estructura
 
@@ -15,9 +15,9 @@ http://localhost:5000/api/cinta/ POST (guarda una cinta)
 
 ## Fichas de prestamo
 
-//http://localhost:5000/api/ficha/ GET (obtiene todas las fichas de préstamo realizadas)
-//http://localhost:5000/api/ficha/ POST (guarda una ficha) 
-//http://localhost:5000/api/ficha/ PUT (cambia el estado "entregado" de la ficha a true y el estado de la cinta tambien )
+- http://localhost:5000/api/ficha/ GET (obtiene todas las fichas de préstamo realizadas)
+- http://localhost:5000/api/ficha/ POST (guarda una ficha) 
+- http://localhost:5000/api/ficha/ PUT (cambia el estado "entregado" de la ficha a true y el estado de la cinta tambien )
 
 ### Estructura
 
@@ -31,8 +31,8 @@ http://localhost:5000/api/cinta/ POST (guarda una cinta)
 
 ## Ficha Pelicula
 
-//http://localhost:5000/api/pelicula/ GET (obtiene todas las peliculas)
-//http://localhost:5000/api/pelicula/ POST (guarda otra pelicula)
+- http://localhost:5000/api/pelicula/ GET (obtiene todas las peliculas)
+- http://localhost:5000/api/pelicula/ POST (guarda otra pelicula)
 
 ### Estructura
 
@@ -49,8 +49,8 @@ http://localhost:5000/api/cinta/ POST (guarda una cinta)
 
 ## Socio
 
-//http://localhost:5000/api/socio/ GET (obtiene los socios)
-//http://localhost:5000/api/socio/ POST (guarda un socio)
+- http://localhost:5000/api/socio/ GET (obtiene los socios)
+- http://localhost:5000/api/socio/ POST (guarda un socio)
 
 ### Estructura
 
