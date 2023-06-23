@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +13,8 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { Principal1Component } from './pages/principal1/principal1.component';
 import { PrincipalpageComponent } from './pages/principalpage/principalpage.component';
 import { SociosComponent } from './pages/socios/socios.component';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -29,7 +32,11 @@ import { SociosComponent } from './pages/socios/socios.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    CommonModule,
+    FormsModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

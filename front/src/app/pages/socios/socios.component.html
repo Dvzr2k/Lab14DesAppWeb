@@ -1,45 +1,45 @@
-<div class="container">
-  <h2 style="text-align: center;">Socios</h2>
-  <table class="table crud-table">
-    <thead>
-      <tr>
-        <th>Nombre</th>
-        <th>Direccion</th>
-        <th>Telefono</th>
-        <th>Directores favoritos</th>
-        <th>Actores favoritos</th>
-        <th>Generos favoritos</th>
-        <th>Accion</th> <!-- Nueva columna para el botón -->
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Nombre1</td>
-        <td>Direccion1</td>
-        <td>Telefono1</td>
-        <td>Directoresfav1</td>
-        <td>Actoresfav1,aaa,aaa</td>
-        <td>Generosfav1</td>
-        <td><button class="btn">Reporte</button></td> <!-- Botón en la nueva columna -->
-      </tr>
-      <tr>
-        <td>Nombre2</td>
-        <td>Direccion2</td>
-        <td>Telefono2</td>
-        <td>Directoresfav2</td>
-        <td>Actoresfav2,aaa,aa</td>
-        <td>Generosfav2</td>
-        <td><button class="btn">Reporte</button></td> <!-- Botón en la nueva columna -->
-      </tr>
-      <tr>
-        <td>Nombre3</td>
-        <td>Direccion3</td>
-        <td>Telefono3</td>
-        <td>Directoresfav3</td>
-        <td>Actoresfav3,aaa,aaa</td>
-        <td>Generosfav3</td>
-        <td><button class="btn">Reporte</button></td> <!-- Botón en la nueva columna -->
-      </tr>
-    </tbody>
-  </table>
-</div>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Listado de Socios</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.0/jspdf.umd.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <!-- Encabezado -->
+    <h2 style="text-align: center;">Socios</h2>
+
+    <!-- Tabla para mostrar los socios -->
+    <table id="socios-table" class="table crud-table">
+      <thead>
+        <!-- Encabezados de las columnas -->
+        <tr>
+          <th>Nombre</th>
+          <th>Dirección</th>
+          <th>Teléfono</th>
+          <th>Directores favoritos</th>
+          <th>Actores favoritos</th>
+          <th>Géneros favoritos</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Ciclo para mostrar los datos de cada socio -->
+        <tr *ngFor="let socio of socios">
+          <td>{{ socio.nombre }}</td>
+          <td>{{ socio.direccion }}</td>
+          <td>{{ socio.telefono }}</td>
+          <td>{{ socio.directoresFavoritos }}</td>
+          <td>{{ socio.actoresFavoritos }}</td>
+          <td>{{ socio.generosFavoritos }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Botón para generar el informe -->
+    <div style="text-align: center;">
+      <button (click)="generarReporte()" class="button-estilo">Reporte</button>
+    </div>
+  </div>
+</body>
+</html>

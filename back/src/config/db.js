@@ -5,6 +5,6 @@ mongoose.connect(
     MONGODB_URI, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
-    })
+    })  
     .then(db => console.log(`Base de datos ${db.connection.name} conectada`))
-    .catch(error => console.log(error))
+    .catch(error => console.log(error)) 

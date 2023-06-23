@@ -1,19 +1,32 @@
-<div class="container">
-  <h1 >Prestamo</h1>
-  <form>
-    <div class="form-group">
-      <label for="movie-name">Nombre de la Película:</label>
-      <input type="text" id="movie-name" name="movie-name" placeholder="Ingrese el nombre de la película">
-    </div>
-    <div class="form-group">
-      <label for="director">Nombre del socio:</label>
-      <input type="text" id="director" name="director" placeholder="Ingrese el nombre del director">
-    </div>
-    <div class="form-group">
-      <label for="actor">Nombre de la cinta:</label>
-      <input type="text" id="actor" name="actor" placeholder="Ingrese el nombre del actor">
-    </div>
-    
-    <button type="submit">Enviar</button>
-  </form>
-</div>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Prestamo</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Prestamo</h1>
+    <form id="prestamo-form" (ngSubmit)="enviarFormulario()">
+      <div class="form-group">
+        <label for="movie-name">Numero de la cinta:</label>
+        <select id="cinta" [(ngModel)]="cintaSeleccionada">
+          <option *ngFor="let cinta of cintasDisponibles" [value]="cinta._id">{{ cinta.nombrePelicula }} - {{ cinta._id.substring(0, 5) }}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="director">Nombre del socio:</label>
+        <select id="socio" [(ngModel)]="socioSeleccionado">
+          <option *ngFor="let socio of sociosDisponibles" [value]="socio._id">{{ socio.nombre }}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="actor">Fecha en que se lleva la cinta:</label>
+        <input type="date" id="fecha" name="fecha" placeholder="Ingrese el nombre del actor">
+      </div>
+      
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+</body>
+</html>

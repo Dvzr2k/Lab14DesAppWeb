@@ -1,14 +1,25 @@
 import { Cinta } from "../models/Cinta.js"
+import { Pelicula } from "../models/Pelicula.js"
 
 export const obtenerCintas = async (req, res) => {
     try {
         const cintasTotales = await Cinta.find();
         let cintasDisponibles = []
         let cintasPrestadas = []
-        cintasTotales.forEach(cinta => {
-            if(!cinta.prestada) cintasDisponibles.push(cinta)
-            else cintasPrestadas.push(cinta)
-        });
+        for (const cinta of cintasTotales) {
+            if (!cinta.prestada) {
+                const pelicula = await Pelicula.findById(cinta.pelicula);
+                cintasDisponibles.push({
+                    _id: cinta._id,
+                    pelicula: cinta.pelicula,
+                    nombrePelicula: pelicula.nombre,
+                    prestada: cinta.prestada,
+                    v: cinta.v
+                });
+            } else {
+                cintasPrestadas.push(cinta);
+            }
+        }
         return res.json( {cintasTotales, cintasDisponibles, cintasPrestadas} )
     } catch (err) {
         console.log(err)
