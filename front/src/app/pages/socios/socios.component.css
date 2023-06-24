@@ -1,0 +1,24 @@
+/* Estilo para el botón */
+.btn {
+  display: inline-block;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  background-color: #007bff; /* Color de fondo del botón */
+  color: #ffffff; /* Color del texto del botón */
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Estilo cuando se pasa el cursor sobre el botón */
+.btn:hover {
+  background-color: #0056b3; /* Nuevo color de fondo */
+}
+
+/* Estilo cuando se presiona el botón */
+.btn:active {
+  background-color: #003d80; /* Nuevo color de fondo */
+}
