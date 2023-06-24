@@ -2,22 +2,17 @@ import { Cinta } from "../models/Cinta.js"
 
 export const obtenerCintas = async (req, res) => {
     try {
-        const cintas = await Cinta.find();
-        return res.json( cintas )
+        const cintasTotales = await Cinta.find();
+        let cintasDisponibles = []
+        let cintasPrestadas = []
+        cintasTotales.forEach(cinta => {
+            if(!cinta.prestada) cintasDisponibles.push(cinta)
+            else cintasPrestadas.push(cinta)
+        });
+        return res.json( {cintasTotales, cintasDisponibles, cintasPrestadas} )
     } catch (err) {
         console.log(err)
     }
-}
-
-export const obtenerCantidadCintas = async (req, res) => {
-    const cintas = await Cinta.find();
-    let cintasDisponibles = []
-    cintas.forEach(cinta => {
-        if(!cinta.prestada) cintasDisponibles.push(cinta)
-    });
-    const nroDisponibles = cintasDisponibles.length()
-    const nroPrestadas = cintas.length() - nroDisponibles
-    return res.send({nroDisponibles, nroPrestadas})
 }
 
 export const guardarCinta = async (req, res) => {

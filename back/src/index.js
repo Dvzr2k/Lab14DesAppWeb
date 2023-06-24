@@ -6,6 +6,7 @@ import cintaRouter from "./routes/cinta.route.js";
 import fichaRouter from "./routes/ficha.route.js";
 import peliculasRouter from "./routes/peliculas.route.js"
 import sociosRouter from "./routes/socio.route.js";
+import pdfRouter from "./routes/reporte.route.js"
 
 const app = express();
 
@@ -20,6 +21,8 @@ app.use("/api/ficha", fichaRouter);
 app.use("/api/pelicula", peliculasRouter);
 
 app.use("/api/socio", sociosRouter);
+
+app.use("/api/pdf", pdfRouter)
 
 app.listen(PORT, () => {
     console.log(`Server on http://localhost:${PORT}/`);

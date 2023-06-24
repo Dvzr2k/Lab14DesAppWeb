@@ -1,11 +1,19 @@
 import { FichaPrestamo } from "../models/FichaPrestamo.js"
-import { devolverCinta, prestarCinta } from "./cinta.controller.js";
+import { FichaEspera  } from "../models/FichaEspera.js";
+import { devolverCinta, obtenerCintas, prestarCinta } from "./cinta.controller.js";
 
 
 export const obtenerFichasPrestamo = async (req, res) => {
     try {
-        const fichasPrestamos = await FichaPrestamo.find();
-        return res.json(fichasPrestamos)
+        const fichas = await FichaPrestamo.find().populate('socio');
+        console.log(fichas)
+        const listaFichas = fichas.map(ficha => ({
+            _id: ficha._id,
+            nroCinta: ficha.cinta,
+            socio: ficha.socio.nombre,
+            fechaDevolver: ficha.fecha
+        }))
+        return res.json(listaFichas)
     } catch (error) {
         console.log(error)
     }
@@ -36,10 +44,77 @@ export const devolverFichaPrestamo = async (req, res) => {
     }
 }
 
-export const devolverFichaEspera = async (req, res) => {
+export const agregarFichaEspera = async (req, res) => {
     try {
-        
+        const fichaEspera = new FichaEspera(req.body)
+        const nuevaFicha = await fichaEspera.save()
+        return res.status(201).json(nuevaFicha)
     } catch (error) {
-        
+        console.log(error)
+    }
+}
+
+
+export const obtenerFichasEspera  = async (req, res) => {
+    try {
+        const fichas = await FichaEspera.aggregate([
+            {
+              $lookup: {
+                from: 'cintas',
+                localField: 'cinta',
+                foreignField: '_id',
+                as: 'cinta'
+              }
+            },
+            {
+              $unwind: '$cinta'
+            },
+            {
+              $lookup: {
+                from: 'peliculas',
+                localField: 'cinta.pelicula',
+                foreignField: '_id',
+                as: 'pelicula'
+              }
+            },
+            {
+              $unwind: '$pelicula'
+            },
+            {
+              $lookup: {
+                from: 'socios',
+                localField: 'socioSolicitante',
+                foreignField: '_id',
+                as: 'socioSolicitante'
+              }
+            },
+            {
+              $unwind: '$socioSolicitante'
+            },
+            {
+              $lookup: {
+                from: 'socios',
+                localField: 'socioRetrasado',
+                foreignField: '_id',
+                as: 'socioRetrasado'
+              }
+            },
+            {
+              $unwind: '$socioRetrasado'
+            },
+            {
+              $project: {
+                _id: 1,
+                'pelicula.nombre': 1,
+                'socioSolicitante.nombre': 1,
+                'socioSolicitante.telefono': 1,
+                'socioRetrasado.nombre': 1,
+                diasDeRetardo: 1,
+              }
+            }
+          ])
+        return fichas
+    } catch (error) {
+        console.log(error)
     }
 }

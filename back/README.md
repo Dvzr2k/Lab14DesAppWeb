@@ -2,9 +2,8 @@
 
 ## Cintas
 
-- http://localhost:5000/api/cinta/ GET (obtiene todas las cintas)
+- http://localhost:5000/api/cinta/ GET (obtiene 3 cosas, as cintas totales, las cintas prestadas y las cintas no prestadas)
 - http://localhost:5000/api/cinta/ POST (guarda una cinta)
-- http://localhost:5000/api/cinta/cantidades GET (obtener cantidades de las cintas, cantidad disponibles de cintas y cantidad de )
 
 ### Estructura
 
@@ -14,11 +13,13 @@
 }
 ```
 
-## Fichas de prestamo
+## Fichas
 
-- http://localhost:5000/api/ficha/ GET (obtiene todas las fichas de préstamo realizadas)
-- http://localhost:5000/api/ficha/ POST (guarda una ficha) 
-- http://localhost:5000/api/ficha/ PUT (cambia el estado "entregado" de la ficha a true y el estado de la cinta tambien )
+### Prestamo
+
+- http://localhost:5000/api/ficha/prestamo GET (obtiene todas las fichas de préstamo realizadas)
+- http://localhost:5000/api/ficha/prestamo POST (guarda una ficha) 
+- http://localhost:5000/api/ficha/prestamo PUT (cambia el estado "entregado" de la ficha a true y el estado de la cinta tambien )
 
 ### Estructura
 
@@ -30,6 +31,22 @@
 }
 ```
 
+### Espera
+
+- http://localhost:5000/api/ficha/espera GET (obtiene todas las fichas de préstamo realizadas)
+
+### Estructura
+
+```json
+{
+    "cinta": "6495c25b581aa9ddb7ccef6c",
+    "socioSolicitante": "6495bdb245bd419f237e4aa2",
+    "socioRetrasado": "6495a74de2ddf1a1e94fb31f",
+    "diasDeRetardo": 2
+}
+```
+
+
 ## Ficha Pelicula
 
 - http://localhost:5000/api/pelicula/ GET (obtiene todas las peliculas)
@@ -39,7 +56,7 @@
 
 ```json
 {
-    "nonmbre": "Creed III",
+    "nombre": "Creed III",
     "director": "Michael B. Jordan",
     "reparto": ["Michaeñ B. Jordan", "Jonathan Majors", "Tessa Thompson", "José Benavidez Jr.", "Mila Davis-kent", "Florian Munteanu"],
     "genero": "Accion",
@@ -67,3 +84,8 @@
 }
 
 ```
+
+## PDF
+
+- http://localhost:5000/api/pdf/ GET (obtiene los pdf)
+
