@@ -18,6 +18,11 @@ export const generarTablaPDF = async (req, res) => {
 
     const doc = new jsPDF();
 
+    const fechaActual = new Date();
+    doc.setFontSize(12);
+    doc.text(`Fecha: ${fechaActual.toLocaleDateString()}`, 10, 10);
+    doc.text('Autor: Ayoria Chagua', 10, 20);
+
     const headers = ['Pelicula', 'Socio Solicitante', 'Nro del Solicitante','Socio Retrasado', 'Días de Retardo'];
 
     const data = fichasEspera.map((ficha) => [
@@ -33,7 +38,7 @@ export const generarTablaPDF = async (req, res) => {
     doc.autoTable({
       head: [headers],
       body: data,
-      margin: { top: 20 },
+      margin: { top: 30 },
     });
 
     res.setHeader('Content-Type', 'application/pdf');
