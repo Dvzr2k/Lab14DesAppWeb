@@ -1,41 +1,84 @@
 .navbar {
-    background-color: #f8f9fa;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .navbar-brand {
-    font-size: 24px;
-    font-weight: bold;
-    color: #343a40;
-  }
-  
-  .navbar-toggler {
-    border: none;
-    background-color: transparent;
-    outline: none;
-  }
-  
-  .navbar-toggler-icon {
-    width: 24px;
-    height: 24px;
-    background-image: url('https://example.com/navbar-toggler-icon.png');
-  }
-  
-  .navbar-nav .nav-item {
-    margin-left: 15px;
-  }
-  
-  .nav-link {
-    font-size: 18px;
-    color: #343a40;
-    transition: color 0.3s ease;
-  }
-  
-  .nav-link:hover {
-    color: #007bff;
-  }
-  
-  .active-link .nav-link {
-    color: #007bff !important;
-  }
-  
+  background-color: #1c8297; /* Cambiar a tu color preferido */
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+}
+
+
+.navbar-brand {
+  color: #fff;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.navbar-brand:hover {
+  color: #f3d250;
+}
+
+.nav-link {
+  color: #fff;
+  font-size: 1rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #f3d250;
+}
+
+.active-link {
+  font-weight: bold;
+}
+
+.navbar-toggler {
+  border-color: #fff;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255, 255, 255, 0.7)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Animaciones */
+
+.navbar:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #f36947;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.navbar:hover:before {
+  transform: scaleX(1);
+}
+
+.nav-link:before,
+.nav-link:after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #f36947;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.nav-link:before {
+  transform-origin: left;
+}
+
+.nav-link:after {
+  transform-origin: right;
+}
+
+.nav-link:hover:before,
+.nav-link:hover:after {
+  transform: scaleX(1);
+}
